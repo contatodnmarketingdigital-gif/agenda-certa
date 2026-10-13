@@ -7,7 +7,7 @@
 <meta name="description" content="Para profissionais da saúde: atraia os pacientes certos, cobre um valor coerente e construa uma agenda que faça sentido. Treinamento + aplicativo + 12 encontros ao vivo.">
 <meta property="og:title" content="Agenda Certa — o paciente certo precisa encontrar você">
 <meta property="og:description" content="Treinamento + aplicativo com 9 etapas + 12 encontros ao vivo. Com Delaine Nogueira.">
-<meta property="og:image" content="assets/app-dashboard.webp">
+<meta property="og:image" content="assets/tela-inicio.webp">
 <meta name="theme-color" content="#1f4d3a">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@ fbq('init','1414822459975494');fbq('track','PageView');})();
 
 <style>
 :root{
-  --bg:#faf7f1; --bg2:#f2ece0; --paper:#fff; --ink:#15241d; --ink2:#3d4a43; --muted:#66736c;
-  --green:#1f4d3a; --green2:#1f6b4f; --deep:#123326; --gold:#a8823c; --gold2:#e3c37f; --line:#e4dccb;
+  --bg:#faf7f1; --bg2:#f2ece0; --paper:#fff; --ink:#15241d; --ink2:#3d4a43; --muted:#55625b;
+  --green:#1f4d3a; --green2:#1f6b4f; --deep:#123326; --gold:#85652b; --gold2:#e3c37f; --line:#e4dccb;
   --serif:"Playfair Display",Georgia,serif; --sans:"Inter","Segoe UI",system-ui,sans-serif;
   --r:20px; --shadow:0 24px 60px -30px rgba(18,51,38,.45);
 }
@@ -53,7 +53,7 @@ em.g{font-style:italic;color:var(--green2)}
 /* botões */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.02em;padding:18px 28px;border-radius:14px;box-shadow:0 14px 30px -14px rgba(31,77,58,.8);transition:transform .15s,background .15s;border:0;cursor:pointer;text-align:center}
 .btn:hover{background:var(--green2);transform:translateY(-1px)}
-.btn:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.btn:focus-visible{outline:3px solid var(--green2);outline-offset:3px}
 .btn.full{width:100%}
 .btn .arr{transition:transform .15s}.btn:hover .arr{transform:translateX(3px)}
 .under{font-size:14px;color:var(--muted);display:flex;gap:6px 14px;flex-wrap:wrap;justify-content:center}
@@ -86,12 +86,12 @@ em.g{font-style:italic;color:var(--green2)}
 .phone{position:absolute;width:270px;border-radius:38px;background:#0f1f18;padding:10px;box-shadow:var(--shadow)}
 .phone .scr{border-radius:29px;overflow:hidden;background:#fff;aspect-ratio:3/4.1}
 .phone .scr img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.phone.a{right:150px;top:30px;transform:rotate(-5deg)}
-.phone.b{right:0;top:0;transform:rotate(4deg);z-index:2}
+.portrait{position:absolute;left:0;top:0;width:68%;height:100%;object-fit:cover;object-position:50% 12%;border-radius:28px;box-shadow:var(--shadow)}
+.phone.b{right:0;bottom:40px;transform:rotate(4deg);z-index:2}
 .demo{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(18,51,38,.92);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;padding:4px 10px;border-radius:999px}
 .float{position:absolute;z-index:4;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow);font-size:13.5px;max-width:220px}
 .float b{display:block;font-family:var(--serif);font-size:20px;color:var(--green)}
-.float.f1{left:0;bottom:70px}.float.f2{right:20px;bottom:-6px}
+.float.f1{left:-14px;bottom:30px}.float.f2{right:10px;top:-14px;bottom:auto}
 
 /* dor */
 .dark{background:var(--deep);color:#eef2ee}
@@ -158,6 +158,24 @@ em.g{font-style:italic;color:var(--green2)}
 .covers{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 18px;margin-top:32px}
 .covers img{flex:none;width:190px;border-radius:14px;scroll-snap-align:start;box-shadow:0 14px 30px -18px rgba(0,0,0,.5)}
 .members{margin-top:26px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+
+/* módulos e trechos de aula */
+.mods{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.mod{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;position:relative;font-size:14.5px;color:var(--muted)}
+.mod .mn{position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--bg2);color:var(--green);font-weight:700;font-size:13px;display:grid;place-items:center}
+.mod b{display:block;color:var(--ink);font-size:15.5px}
+.mod.hl{grid-column:1/-1;border-color:var(--green2);background:#eef4ef}
+.aula{background:var(--deep);color:#eef2ee}
+.aula .eyebrow{color:var(--gold2)}.aula .lead{color:#c9d5cd}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.clip{margin:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
+.clip video{display:block;width:100%;aspect-ratio:512/460;object-fit:cover;background:#0b1f17}
+.clip figcaption{padding:14px 18px 18px;font-size:14.5px;color:#c9d5cd}
+.clip figcaption b{display:block;color:#fff;font-family:var(--serif);font-size:19px;margin-bottom:2px}
+.meetcard{display:flex;gap:18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.meetcard img{width:72px;height:72px;object-fit:contain}
+.meetcard .big{display:block;font-family:var(--serif);font-size:30px;color:var(--green)}
+.meetcard span{color:var(--muted);font-size:15px}
 
 /* encontros */
 .meet{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -249,13 +267,13 @@ footer a{color:#dfe8e2}
   .hero .stack{display:contents}
   .hero .pill{order:1;justify-self:start}.hero h1{order:2}.phones{order:3}.hero .lead{order:4}.hero .checks{order:5}.hero .cta{order:6}.hero .by{order:7}
   .hero h1{font-size:34px}
-  .phones{height:300px;max-width:360px;margin:6px auto 0;width:100%}
+  .phones{height:400px;max-width:360px;margin:6px auto 0;width:100%}
   .phone{width:160px;border-radius:26px;padding:6px}.phone .scr{border-radius:21px}
-  .phones .phone.a{right:auto;left:22px;top:26px}.phones .phone.b{right:22px}
+  .phones .phone.b{right:0;bottom:0}
   .demo{font-size:8.5px;padding:3px 8px;top:12px}.float{font-size:12px;padding:9px 11px;max-width:150px}.float b{font-size:17px}
-  .float.f1{left:0;bottom:6px}.float.f2{right:0;bottom:-10px}
+  .portrait{width:72%;border-radius:22px}.float.f1{left:-4px;bottom:14px}.float.f2{right:-2px;top:-10px}
   .hero .cta{align-items:stretch}.hero .under{justify-content:center}
-  .two,.vs,.method{grid-template-columns:1fr}
+  .two,.vs,.method,.clips,.mods{grid-template-columns:1fr}
   .eq{grid-template-columns:1fr;gap:8px}.op{font-size:24px}
   .steps9{grid-template-columns:1fr 1fr}
   .stage{gap:22px;justify-items:center}.stage .phone{width:260px}
@@ -291,11 +309,11 @@ footer a{color:#dfe8e2}
       <a class="btn" href="#oferta">QUERO CONSTRUIR MINHA AGENDA CERTA <span class="arr">→</span></a>
       <p class="under"><span><b>R$ 297</b> ou 12x de R$ 30,54</span><span>· Garantia de 30 dias</span><span>· Acesso imediato</span></p>
     </div>
-    <div class="by"><img src="assets/delaine-hero.webp" alt="Delaine Nogueira" width="52" height="52" style="object-position:50% 8%"><span><b>com Delaine Nogueira</b>estrategista de negócios digitais para profissionais da saúde</span></div>
+    <div class="by"><span><b>com Delaine Nogueira</b>estrategista de negócios digitais para profissionais da saúde</span></div>
   </div>
   <div class="phones" aria-label="Telas reais do aplicativo Agenda Certa (demonstração)">
-    <div class="phone a"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img src="assets/tela-preco.webp" alt="Tela real do app: etapa Meu Preço" width="720" height="835"></div></div>
-    <div class="phone b"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img src="assets/tela-inicio.webp" alt="Tela real do app: Seu caminho, 9 etapas com barra de progresso" width="720" height="822" fetchpriority="high"></div></div>
+    <img class="portrait" src="assets/delaine-hero.webp" alt="Delaine Nogueira" width="900" height="1350" fetchpriority="high">
+    <div class="phone b"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img src="assets/tela-inicio.webp" alt="Tela real do app: Seu caminho, 9 etapas com barra de progresso" width="720" height="822"></div></div>
     <div class="float f1"><b>9 etapas</b>do perfil aos resultados, uma de cada vez</div>
     <div class="float f2"><b>12 encontros</b>ao vivo, em grupo, um por mês</div>
   </div>
@@ -312,13 +330,13 @@ footer a{color:#dfe8e2}
       <span class="n">01 · Poucos pacientes</span>
       <div class="week"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><i></i><i class="h"></i><i></i><i></i><i class="h"></i></div>
       <h3>A agenda ainda não tem a quantidade de pacientes que você gostaria.</h3>
-      <p>Você sabe que entrega um bom atendimento, mas ainda depende muito de indicação ou não sabe como fazer novas pessoas encontrarem o seu trabalho.</p>
+      <p>Você sabe que entrega um bom atendimento, mas ainda depende muito de indicação. E quando alguém chama, muitas vezes só pergunta o preço e some.</p>
     </article>
     <article class="pain reveal">
       <span class="n">02 · Atendendo cada vez mais</span>
       <div class="week"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div>
       <h3>A agenda até está ocupada, mas para faturar melhor você precisa atender cada vez mais.</h3>
-      <p>Mais horários, mais encaixes, mais atendimentos, e cada vez menos espaço na sua rotina.</p>
+      <p>Mais horários, mais encaixes, muito convênio que paga pouco, e cada vez menos espaço na sua rotina.</p>
     </article>
   </div>
   <p class="verdict">Nos dois casos, só colocar mais pacientes na agenda não resolve.</p>
@@ -350,9 +368,9 @@ footer a{color:#dfe8e2}
     <h2>Você não termina uma aula pensando: “entendi… mas e agora, o que eu faço?”</h2>
   </div>
   <div class="method">
-    <article class="mcard reveal"><div class="img"><img src="assets/modulos-1.webp" alt="Área de membros real com os módulos do treinamento" loading="lazy"></div><div class="body"><span class="k">01 · TREINAMENTO</span><span class="v">Você entende.</span><p>Aulas curtas, na ordem em que o caminho funciona.</p></div></article>
-    <article class="mcard reveal"><div class="img"><img src="assets/app-dashboard.webp" alt="Painel real do aplicativo Agenda Certa" loading="lazy"></div><div class="body"><span class="k">02 · APLICATIVO</span><span class="v">Você faz.</span><p>O app organiza a execução e mostra o seu próximo passo.</p></div></article>
-    <article class="mcard reveal"><div class="img meet"><img src="assets/google-meet.webp" alt="Google Meet" loading="lazy"></div><div class="body"><span class="k">03 · 12 ENCONTROS AO VIVO</span><span class="v">Você ajusta.</span><p>Um por mês, em grupo, para levar a dúvida da etapa em que você está.</p></div></article>
+    <article class="mcard reveal"><div class="img"><img src="assets/capa-estrutura.webp" alt="Capa real do Módulo 1 do treinamento Agenda Certa" loading="lazy" style="object-position:center 30%"></div><div class="body"><span class="k">01 · TREINAMENTO</span><span class="v">Você entende.</span><p>Aulas curtas, na ordem em que o caminho funciona.</p></div></article>
+    <article class="mcard reveal"><div class="img" style="position:relative"><span class="demo" style="top:10px">DEMONSTRAÇÃO</span><img src="assets/aula-perfil.jpg" alt="Tela real do aplicativo: etapa Meu Perfil (demonstração)" loading="lazy"></div><div class="body"><span class="k">02 · APLICATIVO</span><span class="v">Você faz.</span><p>O app organiza a execução e mostra o seu próximo passo.</p></div></article>
+    <article class="mcard reveal"><div class="img meet"><svg viewBox="0 0 24 24" width="84" height="84" fill="none" stroke="#e3c37f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M15 15.5c3 0 6 1.5 6 4.5"/></svg></div><div class="body"><span class="k">03 · 12 ENCONTROS AO VIVO</span><span class="v">Você ajusta.</span><p>Um por mês, em grupo, para levar a dúvida da etapa em que você está.</p></div></article>
   </div>
   <p class="flow">ENTENDA → FAÇA → AJUSTE</p>
 </div></section>
@@ -391,33 +409,51 @@ footer a{color:#dfe8e2}
   <div class="stack">
     <span class="eyebrow">O treinamento</span>
     <h2>Antes da ferramenta, vem a estratégia.</h2>
-    <p class="lead">O anúncio não é o começo. Primeiro você define quem é o seu paciente certo, o que oferece e quanto precisa cobrar. Aí o digital passa a ajudar as pessoas certas a encontrarem o seu trabalho.</p>
+    <p class="lead">O anúncio não é o começo: no caminho, ele é o 6º passo. Primeiro você define quem é o seu paciente certo, o que oferece e quanto precisa cobrar. Aí o digital passa a ajudar as pessoas certas a encontrarem o seu trabalho.</p>
   </div>
   <div class="covers" aria-label="Capas reais dos módulos">
     <img src="assets/capa-comecando.webp" alt="Módulo 0: Começando pelo caminho" loading="lazy">
     <img src="assets/capa-estrutura.webp" alt="Módulo 1: Estrutura" loading="lazy">
     <img src="assets/capa-valor.webp" alt="Módulo 2: Valor" loading="lazy">
     <img src="assets/capa-aquisicao.webp" alt="Módulo 3: atrair pacientes" loading="lazy">
-    <img src="assets/capa-resultados.webp" alt="Módulo 5: Resultados" loading="lazy">
-    <img src="assets/capa-oferta.webp" alt="Módulo Oferta que Vende" loading="lazy">
-    <img src="assets/capa-saude.webp" alt="Módulo Profissionais da Saúde" loading="lazy">
   </div>
-  <div class="members reveal"><img src="assets/modulos-2.webp" alt="Área de membros real: Posicionamento, Tráfego Pago, Profissionais da Saúde e Bônus" loading="lazy"></div>
+  <div class="mods reveal">
+    <div class="mod"><span class="mn">00</span><b>Boas-vindas</b><span>Começando pelo caminho</span></div>
+    <div class="mod"><span class="mn">01</span><b>Posicionamento</b><span>Quem é o seu paciente certo e como ele te reconhece</span></div>
+    <div class="mod"><span class="mn">02</span><b>Oferta</b><span>O que você entrega, para quem e como apresentar</span></div>
+    <div class="mod"><span class="mn">03</span><b>Valor e protocolo</b><span>Quanto cobrar, protocolo e previsibilidade financeira</span></div>
+    <div class="mod"><span class="mn">04</span><b>Anúncio: fundamentos</b><span>O que entender antes de anunciar e a anatomia da campanha</span></div>
+    <div class="mod"><span class="mn">05</span><b>Anúncio: configuração</b><span>Gerenciador de negócios, Instagram, WhatsApp, conta e pagamento</span></div>
+    <div class="mod"><span class="mn">06</span><b>Anúncio: subindo a campanha</b><span>A primeira campanha, inclusive para o WhatsApp, passo a passo</span></div>
+    <div class="mod hl"><span class="mn">07</span><b>Resultados e otimização</b><span>12 aulas: painel de métricas, as métricas que pagam as contas, como achar o gargalo, otimizar criativos e decidir nas campanhas de WhatsApp</span></div>
+  </div>
+</div></section>
+
+<!-- 7b. AULA MOSTRANDO O APP -->
+<section class="aula" id="aula"><div class="wrap">
+  <div class="center stack">
+    <span class="eyebrow">Trechos reais de aula</span>
+    <h2>Veja a Delaine usando o aplicativo dentro da aula.</h2>
+    <p class="lead">Não é simulação: são trechos da aula em que o app é preenchido do começo ao fim, com um perfil de exemplo.</p>
+  </div>
+  <div class="clips">
+    <figure class="clip reveal"><video muted loop playsinline preload="none" poster="assets/aula-perfil.jpg" data-src="assets/aula-perfil.mp4"></video><figcaption><b>Meu Perfil</b>Você preenche uma vez e tudo o que o app cria sai personalizado para a sua profissão.</figcaption></figure>
+    <figure class="clip reveal"><video muted loop playsinline preload="none" poster="assets/aula-identidade.jpg" data-src="assets/aula-identidade.mp4"></video><figcaption><b>Minha Identidade Visual</b>Você escolhe cores e fontes e vê a aplicação na hora.</figcaption></figure>
+    <figure class="clip reveal"><video muted loop playsinline preload="none" poster="assets/aula-criativo.jpg" data-src="assets/aula-criativo.mp4"></video><figcaption><b>Meus Criativos</b>A arte é montada com a sua foto real, a sua identidade e o texto. Nada é gerado por IA.</figcaption></figure>
+  </div>
 </div></section>
 
 <!-- 8. ENCONTROS -->
 <section style="padding-top:24px"><div class="wrap meet">
   <div class="stack">
-    <span class="eyebrow">E se eu travar no caminho?</span>
-    <h2>Você terá um encontro ao vivo todos os meses.</h2>
-    <p class="lead">São 12 encontros em grupo, um por mês. Você leva o que já aplicou e a dúvida da etapa em que está, e ajusta com orientação da Delaine.</p>
-    <div class="cycle"><span>01 APRENDE</span><span>02 APLICA</span><span>03 TRAZ A DÚVIDA</span><span>04 AJUSTA</span></div>
+    <span class="eyebrow">Acompanhamento</span>
+    <h2>E todo mês, um encontro ao vivo para você aplicar com orientação.</h2>
+    <p class="lead">O treinamento ensina o caminho inteiro, da estratégia à otimização. Nos 12 encontros em grupo, um por mês, você traz o que já aplicou e ajusta com a Delaine olhando para o seu caso.</p>
+    <div class="cycle"><span>01 APRENDE</span><span>02 APLICA</span><span>03 TRAZ O SEU CASO</span><span>04 AJUSTA</span></div>
   </div>
-  <div class="bubbles reveal" aria-label="Dúvidas comuns levadas aos encontros">
-    <div class="bub">“Estou recebendo mensagens, mas poucas pessoas agendam.”</div>
-    <div class="bub">“Não sei se meu anúncio está funcionando.”</div>
-    <div class="bub">“Estou insegura com meu preço.”</div>
-    <div class="bub">“Cheguei nessa etapa e travei.”</div>
+  <div class="meetcard reveal">
+    <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#1f4d3a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg>
+    <div><b class="big">12 encontros</b><span>ao vivo, em grupo · um por mês</span></div>
   </div>
 </div></section>
 
@@ -454,7 +490,7 @@ footer a{color:#dfe8e2}
   <div class="ocard">
     <div class="list">
       <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l5 2.5-5 2.5z"/><path d="M8 21h8"/></svg></span><div><b>Treinamento Agenda Certa</b><span>Aulas curtas, na ordem em que o caminho funciona: do paciente certo aos resultados.</span></div></div>
-      <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>Aplicativo com 9 etapas</b><span>Barra de progresso e próximo passo sempre à vista. Calcula o seu preço, monta a arte com a sua foto, entrega o roteiro do WhatsApp e lê os números da campanha.</span></div></div>
+      <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>Aplicativo com 9 etapas</b><span>Barra de progresso e próximo passo sempre à vista. Ajuda a chegar no seu preço, monta a arte com a sua foto, organiza a conversa do WhatsApp e os números da campanha.</span></div></div>
       <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M15 15.5c3 0 6 1.5 6 4.5"/></svg></span><div><b>12 encontros ao vivo, em grupo</b><span>Um por mês, para levar a dúvida da etapa em que você está.</span></div></div>
       <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg></span><div><b>Materiais de aplicação</b><span>Para levar cada aula para a sua realidade.</span></div></div>
       <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></svg></span><div><b>Certificado de conclusão</b><span>Ao concluir o treinamento.</span></div></div>
@@ -470,14 +506,14 @@ footer a{color:#dfe8e2}
       <a class="btn full" data-checkout href="https://payfast.greenn.com.br/192147/offer/xjJjbE">QUERO CONSTRUIR MINHA AGENDA CERTA <span class="arr">→</span></a>
       <p class="secure">🔒 Pagamento seguro pela Greenn · Acesso imediato</p>
       <p class="why"><b>Por que R$ 297?</b> Este treinamento ensina a anunciar. Não faria sentido ele consumir a verba que você vai usar para anunciar: o curso é a parte barata; a verba de anúncio é a que tem que sobrar.</p>
-      <div class="cert"><img src="assets/certificado.webp" alt="Certificado real de conclusão do Agenda Certa" loading="lazy"><span>Certificado de conclusão do treinamento.</span></div>
+      
     </div>
   </div>
   <div class="guarantee">
     <div class="seal"><div><b>30</b><small>DIAS DE<br>GARANTIA</small></div></div>
     <div class="stack" style="gap:8px">
       <h3>Você tem 30 dias para decidir.</h3>
-      <p>Entre, assista às primeiras aulas e faça as primeiras etapas no aplicativo. Se dentro de 30 dias sentir que não é para você, basta pedir o reembolso.</p>
+      <p>Entre, assista às primeiras aulas e faça as primeiras etapas no aplicativo. Se dentro de 30 dias sentir que não é para você, basta pedir o reembolso pela Greenn ou pelo WhatsApp de suporte (21) 96936-3621.</p>
     </div>
   </div>
 </div></section>
@@ -502,7 +538,7 @@ footer a{color:#dfe8e2}
     <details><summary>Preciso ficar aparecendo no Instagram?</summary><p>Não. Você não precisa postar todos os dias nem transformar o Instagram em um segundo trabalho.</p></details>
     <details><summary>Preciso entender de marketing?</summary><p>Não. Você chega com a sua profissão e aprende o suficiente para tomar melhores decisões sobre o seu negócio.</p></details>
     <details><summary>Preciso saber usar inteligência artificial?</summary><p>Não. Nada no caminho depende disso.</p></details>
-    <details><summary>Isso é permitido pelo meu conselho profissional?</summary><p>O treinamento tem uma parte pensada para a realidade da saúde. As diretrizes do seu conselho continuam valendo e são respeitadas na forma de comunicar.</p></details>
+    <details><summary>Isso é permitido pelo meu conselho profissional?</summary><p>O treinamento tem uma parte pensada para a realidade da saúde. Quem responde ao conselho é você; o caminho mostra como comunicar dentro das regras da sua profissão.</p></details>
     <details><summary>Agenda Certa significa agenda lotada?</summary><p>Não. Significa construir uma agenda com pacientes alinhados ao seu atendimento, um valor coerente com o seu trabalho e uma quantidade de atendimentos que faça sentido para os seus objetivos, a sua capacidade e a sua rotina.</p></details>
   </div>
 </div></section>
@@ -528,13 +564,13 @@ footer a{color:#dfe8e2}
 <script>
 /* tour do app: textos tirados das telas reais */
 const ETAPAS=[
- {n:"01",t:"Meu Perfil",img:"tela-inicio",txt:"Você define quem é o seu paciente certo. Tudo o que vem depois parte daqui.",out:"a descrição do seu paciente certo, que alimenta as outras etapas."},
- {n:"02",t:"Minha Identidade Visual",img:"tela-inicio",txt:"Cores, fontes e o jeito do seu perfil, alinhados ao paciente que você quer atrair.",out:"a identidade visual do seu perfil definida."},
- {n:"03",t:"Meu Preço",img:"tela-preco",txt:"Três partes: descobrir quanto cobrar, montar o seu protocolo (vender processo, não consulta avulsa) e as palavras para apresentar esse valor sem perder o paciente.",out:"o seu valor calculado a partir dos seus custos e da sua meta, e as palavras para apresentá-lo."},
- {n:"04",t:"Minha Oferta",img:"tela-inicio",txt:"O que você entrega, para quem e por quanto, organizado de um jeito que o paciente entende.",out:"a sua oferta escrita."},
+ {n:"01",t:"Meu Perfil",img:"tela-inicio",txt:"Você define quem é o seu paciente certo. Tudo o que vem depois parte daqui.",out:"nesta etapa você trabalha quem é o seu paciente certo e os seus dados de atendimento."},
+ {n:"02",t:"Minha Identidade Visual",img:"tela-inicio",txt:"Cores, fontes e o jeito do seu perfil, alinhados ao paciente que você quer atrair.",out:"nesta etapa você trabalha as cores, as fontes e o jeito do seu perfil."},
+ {n:"03",t:"Meu Preço",img:"tela-preco",txt:"Três partes: descobrir quanto cobrar, montar o seu protocolo (vender processo, não consulta avulsa) e as palavras para apresentar esse valor.",out:"o seu valor calculado a partir dos seus custos e da sua meta, e as palavras para apresentá-lo."},
+ {n:"04",t:"Minha Oferta",img:"tela-inicio",txt:"O que você entrega, para quem e por quanto, organizado de um jeito que o paciente entende.",out:"nesta etapa você trabalha o que entrega, para quem e por quanto."},
  {n:"05",t:"Meus Criativos",img:"tela-criativos",txt:"Você escolhe o que quer divulgar e o app monta a arte com a sua foto real, sem você precisar saber design.",out:"os seus primeiros criativos prontos, com a sua foto."},
- {n:"06",t:"Meu WhatsApp",img:"tela-whatsapp",txt:"Primeiro entender a pessoa, depois mostrar valor e só então falar de preço. A conversa inteira, pronta para copiar.",out:"o roteiro da conversa, do primeiro oi ao pós-atendimento."},
- {n:"07",t:"Minha Página",img:"tela-inicio",txt:"O lugar para onde o paciente vai quando quer saber mais sobre o seu atendimento.",out:"a sua página organizada."},
+ {n:"06",t:"Meu WhatsApp",img:"tela-whatsapp",txt:"Quem chama quer saber como funciona e quanto custa. O app organiza a conversa do primeiro contato ao agendamento, com o preço apresentado com clareza e com o que ele inclui.",out:"o roteiro da conversa, pronto para copiar."},
+ {n:"07",t:"Minha Página",img:"tela-inicio",txt:"O lugar para onde o paciente vai quando quer saber mais sobre o seu atendimento.",out:"nesta etapa você trabalha a página do seu atendimento."},
  {n:"08",t:"Minha Campanha",img:"tela-campanha",txt:"O passo a passo para subir o seu criativo no Meta e receber conversa no WhatsApp. Sem termo técnico, uma coisa por vez.",out:"o seu anúncio no ar, passo a passo."},
  {n:"09",t:"Meus Resultados",img:"tela-resultados",txt:"Você preenche os dados da campanha e a ferramenta interpreta os números para você. Não precisa entender de tráfego.",out:"a leitura dos seus números: quanto investiu, quantas conversas, quantos agendamentos e o que ajustar."}
 ];
@@ -542,7 +578,7 @@ const tabs=document.getElementById("tabs"),img=document.getElementById("tour-img
 tabs.innerHTML=ETAPAS.map((e,i)=>`<button class="tab" role="tab" aria-selected="${i===2}" data-i="${i}"><small>${e.n}</small>${e.t}</button>`).join("");
 document.getElementById("steps9").innerHTML=ETAPAS.map(e=>`<div class="s9"><span class="num">${e.n}</span><div><b>${e.t}</b><span>${e.out.charAt(0).toUpperCase()+e.out.slice(1)}</span></div></div>`).join("");
 function show(i){const e=ETAPAS[i];tabs.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",+b.dataset.i===i));
- img.src="assets/"+e.img+".webp";img.alt="Tela real do app: "+e.t+" (demonstração)";
+ img.src="assets/"+e.img+".webp";img.alt=e.img==="tela-inicio"?"Tela real do app: Seu caminho, com as 9 etapas (demonstração)":"Tela real do app: "+e.t+" (demonstração)";
  document.getElementById("tour-step").textContent="ETAPA "+e.n+" DE 09";document.getElementById("tour-title").textContent=e.t;
  document.getElementById("tour-text").textContent=e.txt;document.getElementById("tour-out").textContent=e.out.charAt(0).toUpperCase()+e.out.slice(1);}
 tabs.addEventListener("click",ev=>{const b=ev.target.closest(".tab");if(b){show(+b.dataset.i);b.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});}});
@@ -552,10 +588,15 @@ show(2);
 const bar=document.getElementById("bar"),sticky=document.getElementById("sticky"),oferta=document.getElementById("oferta");
 let ofertaVisivel=false;
 new IntersectionObserver(es=>{ofertaVisivel=es[0].isIntersecting;upd();},{threshold:.05}).observe(oferta);
-function upd(){bar.classList.toggle("on",scrollY>10);sticky.classList.toggle("on",scrollY>700&&!ofertaVisivel);}
+function upd(){bar.classList.toggle("on",scrollY>10);sticky.classList.toggle("on",scrollY>250&&!ofertaVisivel);}
 addEventListener("scroll",upd,{passive:true});upd();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+
+/* trechos de aula: só carregam e tocam quando aparecem na tela */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{});}else v.pause();}),{threshold:.35});
+document.querySelectorAll("video[data-src]").forEach(v=>vio.observe(v));
 
 /* clique no checkout: evento próprio (o InitiateCheckout oficial vem da Greenn, para não contar duas vezes) */
 document.querySelectorAll("[data-checkout]").forEach(a=>a.addEventListener("click",()=>{try{window.fbq&&fbq("trackCustom","CliqueCheckout",{value:297,currency:"BRL"});}catch(e){}}));
