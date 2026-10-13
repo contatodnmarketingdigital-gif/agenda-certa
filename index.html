@@ -291,7 +291,6 @@ footer a{color:#dfe8e2}
 
 <header class="bar" id="bar"><div class="wrap">
   <img src="assets/logo.png" alt="Agenda Certa" width="69" height="38">
-  <a class="mini" href="#oferta">Quero começar</a>
 </div></header>
 
 <main>
@@ -560,7 +559,6 @@ footer a{color:#dfe8e2}
   <span><a href="privacidade.html">Política de privacidade</a></span>
 </div></footer>
 
-<div class="sticky" id="sticky"><div class="p"><b>R$ 297</b>ou 12x de R$ 30,54</div><a class="btn" href="#oferta">QUERO COMEÇAR →</a></div>
 
 <script>
 /* tour do app: textos tirados das telas reais */
@@ -586,10 +584,8 @@ tabs.addEventListener("click",ev=>{const b=ev.target.closest(".tab");if(b){show(
 show(2);
 
 /* barra do topo, barra fixa e animações */
-const bar=document.getElementById("bar"),sticky=document.getElementById("sticky"),oferta=document.getElementById("oferta");
-let ofertaVisivel=false;
-new IntersectionObserver(es=>{ofertaVisivel=es[0].isIntersecting;upd();},{threshold:.05}).observe(oferta);
-function upd(){bar.classList.toggle("on",scrollY>10);sticky.classList.toggle("on",!ofertaVisivel);}
+const bar=document.getElementById("bar");
+function upd(){bar.classList.toggle("on",scrollY>10);}
 addEventListener("scroll",upd,{passive:true});upd();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
