@@ -119,6 +119,7 @@ em.g{font-style:italic;color:var(--green2)}
 .method{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
 .mcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .mcard .img{background:var(--bg2);aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden}
+.mcard .img img{object-position:center}
 .mcard .img img{width:100%;height:100%;object-fit:cover;object-position:top left}
 .mcard .img.meet{background:linear-gradient(135deg,#123326,#1f6b4f)}
 .mcard .img.meet img{width:84px;height:84px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
@@ -368,8 +369,8 @@ footer a{color:#dfe8e2}
     <h2>Você não termina uma aula pensando: “entendi… mas e agora, o que eu faço?”</h2>
   </div>
   <div class="method">
-    <article class="mcard reveal"><div class="img"><img src="assets/capa-estrutura.webp" alt="Capa real do treinamento Agenda Certa" loading="lazy" style="object-position:center 30%"></div><div class="body"><span class="k">01 · TREINAMENTO</span><span class="v">Você entende.</span><p>Aulas curtas, na ordem em que o caminho funciona.</p></div></article>
-    <article class="mcard reveal"><div class="img" style="position:relative"><span class="demo" style="top:10px">DEMONSTRAÇÃO</span><img src="assets/aula-perfil.jpg" alt="Tela real do aplicativo: etapa Meu Perfil (demonstração)" loading="lazy"></div><div class="body"><span class="k">02 · APLICATIVO</span><span class="v">Você faz.</span><p>O app organiza a execução e mostra o seu próximo passo.</p></div></article>
+    <article class="mcard reveal"><div class="img"><img src="assets/card-treinamento.webp" alt="Capas reais dos módulos do treinamento Agenda Certa" loading="lazy" width="1200" height="750"></div><div class="body"><span class="k">01 · TREINAMENTO</span><span class="v">Você entende.</span><p>Aulas curtas, na ordem em que o caminho funciona.</p></div></article>
+    <article class="mcard reveal"><div class="img" style="position:relative"><span class="demo" style="top:10px">DEMONSTRAÇÃO</span><img src="assets/card-app.webp" alt="Tela real do aplicativo: Seu caminho, com as 9 etapas (demonstração)" loading="lazy" width="1200" height="750"></div><div class="body"><span class="k">02 · APLICATIVO</span><span class="v">Você faz.</span><p>O app organiza a execução e mostra o seu próximo passo.</p></div></article>
     <article class="mcard reveal"><div class="img meet"><svg viewBox="0 0 24 24" width="84" height="84" fill="none" stroke="#e3c37f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M15 15.5c3 0 6 1.5 6 4.5"/></svg></div><div class="body"><span class="k">03 · 12 ENCONTROS AO VIVO</span><span class="v">Você ajusta.</span><p>Um por mês, em grupo, para levar a dúvida da etapa em que você está.</p></div></article>
   </div>
   <p class="flow">ENTENDA → FAÇA → AJUSTE</p>
@@ -471,7 +472,7 @@ footer a{color:#dfe8e2}
 
 <!-- 10. DELAINE -->
 <section><div class="wrap about">
-  <div class="photo reveal"><img src="assets/delaine-hero.webp" alt="Delaine Nogueira" loading="lazy"></div>
+  <div class="photo reveal"><img src="assets/delaine-sofa.webp" alt="Delaine Nogueira" loading="lazy" style="object-position:50% 30%"></div>
   <div class="stack">
     <span class="eyebrow">Quem vai te ajudar nesse caminho</span>
     <h2>Você cuida dos seus pacientes. Eu ajudo você a cuidar do negócio por trás da sua profissão.</h2>
