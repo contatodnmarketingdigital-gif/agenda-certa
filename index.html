@@ -191,6 +191,14 @@ em.g{font-style:italic;color:var(--green2)}
 .covers img{flex:none;width:190px;border-radius:14px;scroll-snap-align:start;box-shadow:0 14px 30px -18px rgba(0,0,0,.5)}
 .members{margin-top:26px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
 
+
+.stage{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.stage .phone{width:100%;max-width:560px;background:#fff;padding:8px;border-radius:18px;border:1px solid var(--line)}
+.stage .phone .scr{aspect-ratio:auto;border-radius:12px;max-height:620px;overflow:hidden}
+.stage .phone .scr img{height:auto;object-fit:contain}
+.stage .phone .demo{top:auto;bottom:-12px;left:auto;right:14px;transform:none;z-index:5}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.stage .phone{width:100%}}
+.demo-video{margin:28px auto 0;max-width:860px}.demo-video video{width:100%;border-radius:18px;box-shadow:var(--shadow);display:block;background:#f3efe6;aspect-ratio:16/9}.demo-video figcaption{text-align:center;font-size:13.5px;color:var(--muted);margin-top:10px}
 /* módulos e trechos de aula */
 .mods{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
 .mod{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 58px;position:relative;font-size:14.5px;color:var(--muted)}
@@ -358,7 +366,7 @@ footer a{color:#dfe8e2}
   </div>
   <div class="phones" aria-label="Telas reais do aplicativo Agenda Certa (demonstração)">
     <img class="portrait" src="assets/delaine-hero.webp" alt="Delaine Nogueira" width="900" height="1350" fetchpriority="high">
-    <div class="phone b"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img src="assets/tela-inicio.webp" alt="Tela real do app: Seu caminho, 9 etapas com barra de progresso" width="720" height="822"></div></div>
+    <div class="phone b"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img src="assets/app-seu-caminho.webp" alt="Tela real do app: Seu caminho, com as 9 etapas (demonstração)" width="476" height="570"></div></div>
     <div class="float f1"><b>9 etapas</b>do perfil aos resultados, uma de cada vez</div>
     <div class="float f2"><b>12 encontros</b>ao vivo e em grupo, na última quarta do mês, às 20h</div>
   </div>
@@ -459,9 +467,10 @@ footer a{color:#dfe8e2}
     <h2>O aplicativo mostra o seu próximo passo, uma etapa de cada vez.</h2>
     <p class="lead">Telas reais do app, com dados de demonstração. Toque nas etapas.</p>
   </div>
+  <figure class="demo-video reveal"><video muted loop playsinline preload="none" poster="assets/demo-app.jpg" data-src="assets/demo-app.mp4" aria-label="Demonstração do app com telas reais e perfil fictício"></video><figcaption>O app por dentro, em 19 segundos · telas reais, perfil fictício</figcaption></figure>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div class="stage">
-    <div class="phone"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img id="tour-img" src="assets/tela-inicio.webp" alt="" width="720" height="835" loading="lazy"></div></div>
+    <div class="phone"><span class="demo">DEMONSTRAÇÃO</span><div class="scr"><img id="tour-img" src="assets/app-seu-caminho.webp" alt="" loading="lazy"></div></div>
     <div class="info" aria-live="polite">
       <span class="step" id="tour-step"></span>
       <h3 id="tour-title"></h3>
@@ -642,21 +651,21 @@ footer a{color:#dfe8e2}
 <script>
 /* tour do app: textos tirados das telas reais */
 const ETAPAS=[
- {n:"01",t:"Meu Perfil",img:"tela-inicio",txt:"Você define quem é o seu paciente certo. Tudo o que vem depois parte daqui.",out:"nesta etapa você trabalha quem é o seu paciente certo e os seus dados de atendimento."},
- {n:"02",t:"Minha Identidade Visual",img:"tela-inicio",txt:"Cores, fontes e o jeito do seu perfil, alinhados ao paciente que você quer atrair.",out:"nesta etapa você trabalha as cores, as fontes e o jeito do seu perfil."},
- {n:"03",t:"Meu Valor",img:"tela-preco",txt:"Três partes: descobrir quanto cobrar, montar o seu protocolo (vender processo, não consulta avulsa) e chegar a um valor coerente com o seu trabalho.",out:"o seu valor calculado a partir dos seus custos e da sua meta, e as palavras para apresentá-lo."},
- {n:"04",t:"Minha Oferta",img:"tela-inicio",txt:"O que você entrega, para quem e por quanto, organizado de um jeito que o paciente entende.",out:"nesta etapa você trabalha o que entrega, para quem e por quanto."},
- {n:"05",t:"Meus Criativos",img:"tela-criativos",txt:"Você escolhe o que quer divulgar e o app monta a arte com a sua foto real, sem você precisar saber design.",out:"os seus primeiros criativos prontos, com a sua foto."},
- {n:"06",t:"Meu WhatsApp",img:"tela-whatsapp",txt:"Quem chama quer saber como funciona e quanto custa. Nesta etapa você organiza a conversa do primeiro contato ao agendamento.",out:"nesta etapa você organiza a conversa do primeiro contato ao agendamento."},
- {n:"07",t:"Minha Página",img:"tela-inicio",txt:"O lugar para onde o paciente vai quando quer saber mais sobre o seu atendimento.",out:"nesta etapa você trabalha a página do seu atendimento."},
- {n:"08",t:"Minha Campanha",img:"tela-campanha",txt:"O passo a passo para subir o seu criativo no Meta e receber conversa no WhatsApp. Sem termo técnico, uma coisa por vez.",out:"o seu anúncio no ar, passo a passo."},
- {n:"09",t:"Meus Resultados",img:"tela-resultados",txt:"Você preenche os dados da campanha e a ferramenta interpreta os números para você. Não precisa entender de tráfego.",out:"a leitura dos seus números: quanto investiu, quantas conversas, quantos agendamentos e o que ajustar."}
+ {n:"01",t:"Meu Perfil",img:"app-seu-caminho",txt:"Você define quem é o seu paciente certo. Tudo o que vem depois parte daqui.",out:"nesta etapa você trabalha quem é o seu paciente certo e os seus dados de atendimento."},
+ {n:"02",t:"Minha Identidade Visual",img:"app-seu-caminho",txt:"Cores, fontes e o jeito do seu perfil, alinhados ao paciente que você quer atrair.",out:"nesta etapa você trabalha as cores, as fontes e o jeito do seu perfil."},
+ {n:"03",t:"Meu Valor",img:"tour-valor",txt:"Três partes: descobrir quanto cobrar, montar o seu protocolo (vender processo, não consulta avulsa) e chegar a um valor coerente com o seu trabalho.",out:"o seu valor calculado a partir dos seus custos e da margem que você quer."},
+ {n:"04",t:"Minha Oferta",img:"tour-oferta",txt:"O que você entrega, para quem e por quanto, organizado de um jeito que o paciente entende.",out:"a sua oferta escrita: você responde com as suas palavras e o app organiza."},
+ {n:"05",t:"Meus Criativos",img:"tour-criativos",txt:"Você escolhe o que quer divulgar e o app monta a arte com a sua foto real, sem você precisar saber design.",out:"os seus primeiros criativos prontos, com a sua foto."},
+ {n:"06",t:"Meu WhatsApp",img:"tour-whatsapp",txt:"Quem chama quer saber como funciona e quanto custa. Nesta etapa você organiza a conversa do primeiro contato ao agendamento.",out:"nesta etapa você organiza a conversa do primeiro contato ao agendamento."},
+ {n:"07",t:"Minha Página",img:"tour-pagina",txt:"O lugar para onde o paciente vai quando quer saber mais sobre o seu atendimento.",out:"o texto da página do seu atendimento, em blocos, pronto para colar na sua ferramenta de página."},
+ {n:"08",t:"Minha Campanha",img:"tour-campanha",txt:"O passo a passo para subir o seu criativo no Meta e receber conversa no WhatsApp. Sem termo técnico, uma coisa por vez.",out:"o seu anúncio no ar, passo a passo."},
+ {n:"09",t:"Meus Resultados",img:"tour-resultados",txt:"Você preenche os dados da campanha e a ferramenta interpreta os números para você. Não precisa entender de tráfego.",out:"a leitura dos seus números: onde está o gargalo e o que ajustar."}
 ];
 const tabs=document.getElementById("tabs"),img=document.getElementById("tour-img");
 tabs.innerHTML=ETAPAS.map((e,i)=>`<button class="tab" role="tab" aria-selected="${i===2}" data-i="${i}"><small>${e.n}</small>${e.t}</button>`).join("");
 document.getElementById("steps9").innerHTML=ETAPAS.map(e=>`<div class="s9"><span class="num">${e.n}</span><div><b>${e.t}</b><span>${e.out.charAt(0).toUpperCase()+e.out.slice(1)}</span></div></div>`).join("");
 function show(i){const e=ETAPAS[i];tabs.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",+b.dataset.i===i));
- img.src="assets/"+e.img+".webp";img.alt=e.img==="tela-inicio"?"Tela real do app: Seu caminho, com as 9 etapas (demonstração)":"Tela real do app: "+e.t+" (demonstração)";
+ img.src="assets/"+e.img+".webp";img.alt=e.img==="app-seu-caminho"?"Tela real do app: Seu caminho, com as 9 etapas (demonstração)":"Tela real do app: "+e.t+" (demonstração)";
  document.getElementById("tour-step").textContent="ETAPA "+e.n+" DE 09";document.getElementById("tour-title").textContent=e.t;
  document.getElementById("tour-text").textContent=e.txt;const nesta=/^nesta etapa/i.test(e.out);document.getElementById("tour-lbl").textContent=nesta?"Nesta etapa":"Você sai com";document.getElementById("tour-out").textContent=nesta?e.out.replace(/^nesta etapa você /i,"Você ").replace(/^./,c=>c.toUpperCase()):e.out.charAt(0).toUpperCase()+e.out.slice(1);}
 tabs.addEventListener("click",ev=>{const b=ev.target.closest(".tab");if(b){show(+b.dataset.i);b.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});}});
